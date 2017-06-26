@@ -1,0 +1,93 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>FileUploadSample</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>FileUploadSample</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Filters\**" />
+    <Compile Remove="Models\**" />
+    <Compile Remove="ViewModels\**" />
+    <Compile Remove="Views\Profile\**" />
+    <Compile Remove="Views\Streaming\**" />
+    <Content Remove="Filters\**" />
+    <Content Remove="Models\**" />
+    <Content Remove="ViewModels\**" />
+    <Content Remove="Views\Profile\**" />
+    <Content Remove="Views\Streaming\**" />
+    <EmbeddedResource Remove="Filters\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
+    <EmbeddedResource Remove="Views\Profile\**" />
+    <EmbeddedResource Remove="Views\Streaming\**" />
+    <None Remove="Filters\**" />
+    <None Remove="Models\**" />
+    <None Remove="ViewModels\**" />
+    <None Remove="Views\Profile\**" />
+    <None Remove="Views\Streaming\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\ProfileController.cs" />
+    <Compile Remove="Controllers\StreamingController.cs" />
+    <Compile Remove="MultipartRequestHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot/js\app.js" />
+    <Content Remove="wwwroot/js\site.js~RF1074a29.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="UpgradeLog.htm" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\css\custom.css" />
+    <Content Include="wwwroot\js\site.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="wwwroot\**\*;Views\**\*;Areas\**\Views">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">  
+  </Target>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.2.301" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
+</Project>
